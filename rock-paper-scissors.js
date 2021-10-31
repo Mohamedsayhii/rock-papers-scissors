@@ -9,9 +9,6 @@ const playerSelection = function playerPlay () {
     return selection.toLowerCase();
 }
 
-
-
-
 function playRound(playerSelection, computerSelection) {
     let winner;
 
@@ -39,7 +36,6 @@ function playRound(playerSelection, computerSelection) {
         console.log('You lose this round!');
         winner = `Computer`;
     }
-
     return winner;
 }
 
