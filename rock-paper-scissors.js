@@ -1,13 +1,17 @@
+//game logic
+
 const computerSelection = function computerPlay() {
   const arrayRPS = [`rock`, `paper`, `scissors`];
   const randomElement = arrayRPS[Math.floor(Math.random() * arrayRPS.length)];
   return randomElement;
 };
 
-const playerSelection = function playerPlay() {
-  let selection = prompt(`Please enter your selection`);
-  return selection.toLowerCase();
-};
+let playerSelection;
+
+// const playerSelection = function playerPlay() {
+//   let selection = prompt(`Please enter your selection`);
+//   return selection.toLowerCase();
+// };
 
 function playRound(playerSelection, computerSelection) {
   let winner;
@@ -64,3 +68,23 @@ function game() {
     console.log("Casualities");
   }
 }
+
+// added UI design
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+
+rockBtn.addEventListener("click", () => {
+  playerSelection = rockBtn.id;
+});
+
+paperBtn.addEventListener("click", () => {
+  playerSelection = paperBtn.id;
+});
+
+scissorsBtn.addEventListener("click", () => {
+  playerSelection = scissorsBtn.id;
+});
+
+console.log(playerSelection);
+console.log(computerSelection());

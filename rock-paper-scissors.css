@@ -1,0 +1,56 @@
+* {
+  color: azure;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  background-color: black;
+}
+
+h1,
+h3 {
+  text-align: center;
+}
+
+img {
+  object-fit: fill;
+  width: 200px;
+  height: 200px;
+}
+
+.buttons-container {
+  justify-content: center;
+  margin: auto;
+}
+
+.buttons {
+  margin: 0 10px;
+}
+
+.game {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.scores {
+  display: flex;
+  column-gap: 200px;
+}
+
+.choices {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+tr,
+td {
+  width: 200px;
+  border: 3px solid azure;
+}
+
+td {
+  padding: 50px;
+}
