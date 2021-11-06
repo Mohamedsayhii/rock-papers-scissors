@@ -1,4 +1,14 @@
 //game logic
+const btnsContainer = document.querySelector(".buttons-container");
+
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+
+const resultRound = document.querySelector(".result");
+const resultRoundStyle = resultRound.style;
+
+let playerSelection;
 
 const computerSelection = function computerPlay() {
   const arrayRPS = [`rock`, `paper`, `scissors`];
@@ -6,12 +16,20 @@ const computerSelection = function computerPlay() {
   return randomElement;
 };
 
-let playerSelection;
+rockBtn.addEventListener("click", (e) => {
+  playerSelection = e.target.id;
+  playRound(playerSelection, computerSelection());
+});
 
-// const playerSelection = function playerPlay() {
-//   let selection = prompt(`Please enter your selection`);
-//   return selection.toLowerCase();
-// };
+paperBtn.addEventListener("click", (e) => {
+  playerSelection = e.target.id;
+  playRound(playerSelection, computerSelection());
+});
+
+scissorsBtn.addEventListener("click", (e) => {
+  playerSelection = e.target.id;
+  playRound(playerSelection, computerSelection());
+});
 
 function playRound(playerSelection, computerSelection) {
   let winner;
@@ -20,71 +38,58 @@ function playRound(playerSelection, computerSelection) {
   console.log(`Your choice is ${playerSelection}`);
 
   if (playerSelection === computerSelection) {
-    console.log("EQUAL!");
+    resultRound.textContent = "EQUAL";
+    resultRoundStyle.color = "blue";
   } else if (playerSelection == `rock` && computerSelection == `paper`) {
-    console.log(`You lose this round!`);
+    resultRound.textContent = "PC wins this round!";
+    resultRoundStyle.color = "red";
     winner = `Computer`;
   } else if (playerSelection == `rock` && computerSelection == `scissors`) {
-    console.log("You win this round!");
+    resultRound.textContent = "You win this round!";
+    resultRoundStyle.color = "green";
     winner = `You`;
   } else if (playerSelection == `paper` && computerSelection == `scissors`) {
-    console.log("You lose this round!");
+    resultRound.textContent = "PC wins this round!";
+    resultRoundStyle.color = "red";
     winner = `Computer`;
   } else if (playerSelection == `paper` && computerSelection == `rock`) {
-    console.log("You win this round!");
+    resultRound.textContent = "You win this round!";
+    resultRoundStyle.color = "green";
     winner = `You`;
   } else if (playerSelection == `scissors` && computerSelection == `paper`) {
-    console.log("You win this round!");
+    resultRound.textContent = "You win this round!";
+    resultRoundStyle.color = "green";
     winner = `You`;
   } else if (playerSelection == `scissors` && computerSelection == `rock`) {
-    console.log("You lose this round!");
+    resultRound.textContent = "PC wins this round!";
+    resultRoundStyle.color = "red";
     winner = `Computer`;
   }
   return winner;
 }
 
-function game() {
-  let winner;
-  let playerScore = 0;
-  let computerScore = 0;
+// function game() {
+//   let winner;
+//   let playerScore = 0;
+//   let computerScore = 0;
 
-  for (i = 1; i <= 5; i++) {
-    console.log(`Round ${i}`);
-    winner = playRound(playerSelection(), computerSelection());
-    if (winner == `You`) {
-      playerScore = playerScore + 1;
-    } else if (winner == `Computer`) {
-      computerScore = computerScore + 1;
-    }
-    console.log(`your score is ${playerScore}`);
-    console.log(`computer score is ${computerScore}`);
-  }
+//   for (i = 1; i <= 5; i++) {
+//     console.log(`Round ${i}`);
+//     winner = playRound(playerSelection, computerSelection());
+//     if (winner == `You`) {
+//       playerScore = playerScore + 1;
+//     } else if (winner == `Computer`) {
+//       computerScore = computerScore + 1;
+//     }
+//     console.log(`your score is ${playerScore}`);
+//     console.log(`computer score is ${computerScore}`);
+//   }
 
-  if (playerScore > computerScore) {
-    console.log(`You win the game`);
-  } else if (playerScore < computerScore) {
-    console.log(`You lose the game`);
-  } else {
-    console.log("Casualities");
-  }
-}
-
-// added UI design
-const rockBtn = document.querySelector("#rock");
-const paperBtn = document.querySelector("#paper");
-const scissorsBtn = document.querySelector("#scissors");
-
-rockBtn.addEventListener("click", () => {
-  playerSelection = rockBtn.id;
-});
-
-paperBtn.addEventListener("click", () => {
-  playerSelection = paperBtn.id;
-});
-
-scissorsBtn.addEventListener("click", () => {
-  playerSelection = scissorsBtn.id;
-});
-
-console.log(playerSelection);
-console.log(computerSelection());
+//   if (playerScore > computerScore) {
+//     console.log(`You win the game`);
+//   } else if (playerScore < computerScore) {
+//     console.log(`You lose the game`);
+//   } else {
+//     console.log("Casualities");
+//   }
+// }

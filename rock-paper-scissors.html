@@ -12,26 +12,25 @@
     <h1 class="title">Rock Paper Scissors DEATH GAME</h1>
     <h3>Your life is on stake unless YOU WIN</h3>
     <div class="buttons-container">
-      <button class="buttons" id="rock">
-        <img class="therock" src="/images/dwayne-johnson.jpg" alt="A rock" />
+      <button class="buttons">
+        <img src="/images/dwayne-johnson.jpg" alt="A rock" id="rock" />
       </button>
-      <button class="buttons" id="paper">
-        <img src="/images/paper-2631126_1280.webp" alt="paper" />
+      <button class="buttons">
+        <img src="/images/paper-2631126_1280.webp" alt="paper" id="paper" />
       </button>
-      <button class="buttons" id="scissors">
+      <button class="buttons">
         <img
           src="/images/b9de154b3f0a03c6c8ffe9279dbb75b2.jpg"
           alt="scissors"
+          id="scissors"
         />
       </button>
     </div>
-    <div>
+    <div class="game">
       <h3>Scores</h3>
-      <div class="game">
-        <div class="scores">
-          <h5 id="player-score">Your Score:</h5>
-          <h5 id="computer-score">Computer Score:</h5>
-        </div>
+      <div class="scores">
+        <h5 id="player-score">Your Score:</h5>
+        <h5 id="computer-score">Computer Score:</h5>
       </div>
       <div class="choices">
         <table>
@@ -45,6 +44,7 @@
     <br />
     <div class="round">
       <h3>Round Number</h3>
+      <h4 class="result"></h4>
     </div>
   </body>
 </html>
