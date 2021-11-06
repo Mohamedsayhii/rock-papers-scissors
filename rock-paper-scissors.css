@@ -6,25 +6,11 @@ body {
   display: flex;
   flex-flow: column;
   background-color: black;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-div {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 h1,
-h3 {
+h3,
+h4 {
   text-align: center;
   margin: 10px;
 }
@@ -58,8 +44,14 @@ img {
 
 .choices {
   display: flex;
-  flex-flow: row;
   justify-content: center;
+  text-align: center;
+}
+
+#player-choice,
+#computer-choice {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 tr,
