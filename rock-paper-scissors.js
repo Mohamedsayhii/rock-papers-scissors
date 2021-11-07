@@ -47,9 +47,6 @@ function playRound(playerSelection, computerSelection) {
   computerChoice.textContent = `${computerSelection}`;
   playerChoice.textContent = `${playerSelection}`;
 
-  playerScoreSpan.textContent = playerScore;
-  computerScoreSpan.textContent = computerScore;
-
   if (playerScore < 5 && computerScore < 5) {
     if (playerSelection === computerSelection) {
       resultRound.textContent = "EQUAL";
@@ -57,37 +54,38 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection == `rock` && computerSelection == `paper`) {
       resultRound.textContent = "PC wins this round!";
       resultRoundStyle.color = "red";
-
-      computerScore++;
+      computerScore = computerScore + 1;
     } else if (playerSelection == `rock` && computerSelection == `scissors`) {
       resultRound.textContent = "You win this round!";
       resultRoundStyle.color = "green";
-      playerScore++;
+      playerScore = playerScore + 1;
     } else if (playerSelection == `paper` && computerSelection == `scissors`) {
       resultRound.textContent = "PC wins this round!";
       resultRoundStyle.color = "red";
-      computerScore++;
+      computerScore = computerScore + 1;
     } else if (playerSelection == `paper` && computerSelection == `rock`) {
       resultRound.textContent = "You win this round!";
       resultRoundStyle.color = "green";
-      playerScore++;
+      playerScore = playerScore + 1;
     } else if (playerSelection == `scissors` && computerSelection == `paper`) {
       resultRound.textContent = "You win this round!";
       resultRoundStyle.color = "green";
-      playerScore++;
+      playerScore = playerScore + 1;
     } else if (playerSelection == `scissors` && computerSelection == `rock`) {
       resultRound.textContent = "PC wins this round!";
       resultRoundStyle.color = "red";
-      computerScore++;
+      computerScore = computerScore + 1;
     }
-  } else {
-    if (playerScore > computerScore) {
-      resultRound.textContent = "AHCHIIIIIH, bara rawah";
-      resultRoundStyle.color = "green";
-    } else {
-      resultRound.textContent = "Te7chelk";
-      resultRoundStyle.color = "red";
-    }
+    playerScoreSpan.textContent = playerScore;
+    computerScoreSpan.textContent = computerScore;
+  }
+
+  if (playerScore == 5) {
+    resultRound.textContent = "AHCHIIIIIH, bara rawah";
+    resultRoundStyle.color = "green";
+  } else if (computerScore == 5) {
+    resultRound.textContent = "Te7chelk";
+    resultRoundStyle.color = "red";
   }
 }
 
